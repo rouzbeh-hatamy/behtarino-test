@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import { useRouter } from "next/router";
+import { loadItems } from "../lib/products";
 
 export default function Home({ items }) {
   const { push } = useRouter();
@@ -51,9 +52,8 @@ export default function Home({ items }) {
     </Container>
   );
 }
-export async function getStaticProps(context) {
-  const res = await fetch(`https://fakestoreapi.com/products?limit=6`);
-  const items = await res.json();
+export async function getStaticProps() {
+  const items = await loadItems();
   return {
     props: {
       items,
