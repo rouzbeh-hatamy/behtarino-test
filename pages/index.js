@@ -1,12 +1,7 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import React from "react";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-     
-    </div>
-  )
+function index() {
+  return <div>index</div>;
 }
+
+export default index;
