@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { loadItems } from "../lib/products";
 
@@ -18,6 +19,10 @@ export default function Home({ items }) {
   };
   return (
     <Container>
+      <Head>
+        <title>Products</title>
+        <meta name="description" content="list of Products" key="desc" />
+      </Head>
       <Grid container>
         <Grid item display="flex" flexWrap="wrap" py={4}>
           {items.map((item) => (

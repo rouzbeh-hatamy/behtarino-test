@@ -2,11 +2,16 @@ import { Button, Grid, Rating, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
 import { Person, ShoppingCart } from "@mui/icons-material";
+import Head from "next/head";
 import { loadItem } from "../../lib/productDetail";
 
 export default function Item({ item }) {
   return (
     <Container>
+      <Head>
+        <title>{item.title}</title>
+        <meta name="description" content={item.description} key="desc" />
+      </Head>
       <Grid
         container
         sx={{
